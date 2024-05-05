@@ -33,7 +33,7 @@ def load_and_calculate(selected_well):
     fill_table(params)
 
     # Заполнение параметров из последней выбранной скважины
-    po, L, Py, Ty, Tz, lk, D, Q = [float(param) for param in params[-1][1:9]]
+    po, L, Py, Ty, Tz, Q, lk, D = [float(param) for param in params[-1][1:9]]
     print(po, L, Py, Ty, Tz, lk, D, Q)
     E = 2 * lk / D
     Lambda = 1 / (4 * (math.log10(7.41 / E)) ** 2)
@@ -65,7 +65,9 @@ def load_and_calculate(selected_well):
 
         # Обновление значения Pz для следующей итерации
         Pz_n = Pz
-        print("Pz =", Pz, Z, S, Ppr, Tpr)
+    differens_P = Pz-Py
+    K =Q/differens_P
+    print("Pz =", Pz, differens_P,K)
 
 
 
