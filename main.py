@@ -65,9 +65,9 @@ def load_and_calculate(selected_well):
 
         # Обновление значения Pz для следующей итерации
         Pz_n = Pz
-    differens_P = Pz-Py
-    K =Q/differens_P
-    print("Pz =", Pz, differens_P,K)
+    difference_P = Pz-Py
+    K =Q/difference_P
+    print("Pz =", Pz, difference_P,K)
 
 
 
@@ -101,5 +101,7 @@ tree.heading("7", text="Абсолютная шероховатость труб
 tree.heading("8", text="Внутренний диаметр труб")
 tree.heading("9", text="Дата")
 tree.pack(expand=True, fill="both")
+
+
 
 root.mainloop()
